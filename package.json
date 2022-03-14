@@ -1,5 +1,5 @@
 {
-  "name": "jsontable",
+  "name": "@rentzsch/jsontable",
   "version": "0.1.0",
   "description": "Simple, efficient, flexible, streamable tabular textual data format",
   "main": "dist/JSONTable.js",
