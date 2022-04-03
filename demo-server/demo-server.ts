@@ -1,6 +1,8 @@
-const crypto = require("crypto");
-const fs = require("fs");
-const http = require("http");
+import { JSONTableWriter } from "../src/JSONTableWriter";
+
+import crypto from "crypto";
+import fs from "fs";
+import http from "http";
 
 let gReqID = 1;
 http
@@ -11,7 +13,7 @@ http
     switch (url.pathname) {
       case "/":
         res.writeHead(200, { "Content-Type": "text/html" });
-        res.end(fs.readFileSync("demo-server.html"));
+        res.end(fs.readFileSync("demo-server/demo-server.html"));
         break;
       case "/read-stream":
         handleReadStream(reqID, url.searchParams, res);
@@ -24,12 +26,16 @@ http
   .listen(3000);
 console.log("visit http://localhost:3000");
 
-function handleReadStream(reqID, urlSearchParams, res) {
+function handleReadStream(
+  reqID: number,
+  urlSearchParams: URLSearchParams,
+  res: http.ServerResponse
+) {
   const interval = urlSearchParams.has("interval")
-    ? parseInt(urlSearchParams.get("interval"), 10)
+    ? parseInt(urlSearchParams.get("interval")!, 10)
     : 1000;
   const count = urlSearchParams.has("count")
-    ? parseInt(urlSearchParams.get("count"), 10)
+    ? parseInt(urlSearchParams.get("count")!, 10)
     : 10;
   let index = 1;
 
@@ -54,7 +60,7 @@ function handleReadStream(reqID, urlSearchParams, res) {
   }, interval);
 }
 
-function handleWriteStream(reqID, urlSearchParams, res) {
+function handleWriteStream(reqID: any, urlSearchParams: any, res: any) {
   // Calc tape?
   // input incoming number table
   // output number with related sum
