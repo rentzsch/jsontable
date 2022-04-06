@@ -1,0 +1,6 @@
+demo-server
+src/**/*.ts
+src/**/*.test.js
+src/jsontable-demo-*.js
+tsconfig.json
+webpack.config.js

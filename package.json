@@ -5,17 +5,15 @@
   "main": "dist/jsontable.js",
   "license": "MIT",
   "scripts": {
-    "clean": "find src -name '*.js' -delete",
+    "clean": "find src -name '*.js' -delete && rm -f demo-server/demo-server-client-bundle.js",
     "test": "tsc && ava",
     "demo": "yarn test && webpack && node src/jsontable-demo-server.js",
-    "prepublishOnly": "yarn clean && yarn test && rm dist/**/*.test.js && rm dist/demo-server"
+    "prepublishOnly": "yarn clean && yarn test"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
     "ava": "^4.1.0",
     "ts-loader": "^9.2.8",
-    "ts-node": "^10.7.0",
-    "tslib": "^2.3.1",
     "type-fest": "^2.12.0",
     "typescript": "^4.6.2",
     "webpack": "^5.71.0",
@@ -23,8 +21,5 @@
   },
   "engines": {
     "node": ">=16"
-  },
-  "files": [
-    "src/**/*.js"
-  ]
+  }
 }
