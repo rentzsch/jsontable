@@ -1,4 +1,4 @@
-import { JSONTableWriter } from "../src/JSONTableWriter";
+import { JSONTableWriter } from "./JSONTableWriter";
 
 import crypto from "crypto";
 import fs from "fs";
@@ -14,6 +14,10 @@ http
       case "/":
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(fs.readFileSync("demo-server/demo-server.html"));
+        break;
+      case "/client.js":
+        res.writeHead(200, { "Content-Type": "text/javascript" });
+        res.end(fs.readFileSync("src/jsontable-demo-client.js"));
         break;
       case "/read-stream":
         handleReadStream(reqID, url.searchParams, res);

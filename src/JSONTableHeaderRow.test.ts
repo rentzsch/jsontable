@@ -1,6 +1,7 @@
 import {
   JSONTableHeaderRow,
   DynamicHeaderObjectCell,
+  validateDynamicHeaderRow,
 } from "./JSONTableHeaderRow";
 import test from "ava";
 
@@ -63,3 +64,7 @@ test("table header 2 named", (t) => {
   t.deepEqual(tableHeader.indicesForColumnName("firstName"), [0]);
   t.deepEqual(tableHeader.indicesForColumnName("lastName"), [1]);
 });
+
+// test("validateDynamicHeaderRow", (t) => {
+//   validateDynamicHeaderRow(undefined);
+// });

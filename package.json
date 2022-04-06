@@ -2,17 +2,22 @@
   "name": "@rentzsch/jsontable",
   "version": "0.1.0",
   "description": "Simple, efficient, flexible, streamable tabular textual data format",
-  "main": "dist/JSONTable.js",
+  "main": "dist/jsontable.js",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "find src -name '*.js' -delete",
     "test": "tsc && ava",
-    "demo": "tsc && node dist/demo-server/demo-server.js",
-    "prepublishOnly": "yarn test && rm dist/**/*.test.js && rm dist/demo-server"
+    "demo": "yarn test && node src/jsontable-demo-server.js",
+    "prepublishOnly": "yarn clean && yarn test && rm dist/**/*.test.js && rm dist/demo-server"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.1",
     "@types/node": "^17.0.21",
     "ava": "^4.1.0",
+    "rollup": "^2.70.1",
+    "rollup-plugin-dts": "^4.2.0",
+    "ts-node": "^10.7.0",
+    "tslib": "^2.3.1",
     "type-fest": "^2.12.0",
     "typescript": "^4.6.2"
   },
@@ -20,6 +25,7 @@
     "node": ">=16"
   },
   "files": [
-    "dist"
+    "src/**/*.js",
+    "jsontable.mjs"
   ]
 }

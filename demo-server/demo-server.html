@@ -10,15 +10,15 @@
     </style>
   </head>
   <body>
-    <form name="streamForm">
-      Stream <input name="count" type="number" value="10" min="1" /> rows, 1
+    <form>
+      Stream <input id="count" type="number" value="10" min="1" /> rows, 1
       every
-      <input name="interval" type="number" value="1000" min="0" /> milliseconds
+      <input id="interval" type="number" value="1000" min="0" /> milliseconds
     </form>
     <!-- Flouting the "rules"
       https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#inline_event_handlers_%E2%80%94_dont_use_these
     -->
-    <button onclick="return handleReadStreamClick()">Stream</button>
+    <button>Stream</button>
     <hr />
     <table id="output">
       <thead>
@@ -31,25 +31,12 @@
       </thead>
       <tbody></tbody>
     </table>
-    <script>
-      async function handleReadStreamClick() {
-        const url = new URL(window.location.href);
-        url.pathname = "read-stream";
-        url.search = new URLSearchParams({
-          count: document.streamForm.count.value,
-          interval: document.streamForm.interval.value,
-        });
-        const response = await fetch(url);
-        const reader = response.body.getReader();
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) break;
-          console.log("Received", value);
-        }
-
-        console.log("Response fully received");
-        return false;
-      }
-    </script>
+    <template id="row">
+      <tr>
+        <td class="timestamp"></td>
+        <td class="uuid"></td>
+      </tr>
+    </template>
+    <script src="client.js"></script>
   </body>
 </html>

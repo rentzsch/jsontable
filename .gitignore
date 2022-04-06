@@ -1,3 +1,10 @@
+# Compiled TypeScript-compiled files
+src/**/*.js
+
+#######################################################################
+# GitHub-generated defaults follow:
+
+# macOS
 .DS_Store
 
 # Logs
