@@ -1,9 +1,9 @@
-import { JSONTable } from "./JSONTable";
+import { JSONTable } from "../JSONTable";
 import {
   JSONTableWriter,
   JSONTableWriterEvent,
   JSONTableWriterState,
-} from "./JSONTableWriter";
+} from "../JSONTableWriter";
 
 const gDecoder = new TextDecoder();
 

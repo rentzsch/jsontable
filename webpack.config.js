@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/jsontable-demo-client.ts",
+  entry: "./src/demo/client.ts",
   module: {
     rules: [
       {
@@ -15,7 +15,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "demo-server-client-bundle.js",
+    filename: "demo-client-bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   mode: "none",
