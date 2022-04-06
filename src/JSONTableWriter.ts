@@ -99,6 +99,10 @@ export class JSONTableWriter<
           dataRows
         );
       }
+    } else {
+      if (end) {
+        this.updateState(JSONTableWriterState.DATA_ROWS_ENDED, null, []);
+      }
     }
   }
 
