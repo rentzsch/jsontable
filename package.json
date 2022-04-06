@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "test": "tsc && ava",
-    "demo": "yarn test && webpack && node dist/jsontable-demo-server.js",
+    "demo": "yarn test && webpack && node dist/demo/server.js",
     "prepublishOnly": "yarn clean && yarn test"
   },
   "devDependencies": {
