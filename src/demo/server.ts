@@ -17,7 +17,7 @@ http
         break;
       case "/client.js":
         res.writeHead(200, { "Content-Type": "text/javascript" });
-        res.end(fs.readFileSync("dist/demo-client-bundle.js"));
+        res.end(fs.readFileSync("dist/demo/client-bundle.js"));
         break;
       case "/read-stream":
         handleReadStream(reqID, url.searchParams, res);

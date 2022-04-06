@@ -1,5 +1,7 @@
 demo-server.html
 dist/**/*.test.js
+dist/demo
 src
 tsconfig.json
 webpack.config.js
+
