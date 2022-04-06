@@ -1,6 +1,6 @@
 {
   "name": "@rentzsch/jsontable",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple, efficient, flexible, streamable tabular textual data format",
   "main": "dist/index.js",
   "license": "MIT",
