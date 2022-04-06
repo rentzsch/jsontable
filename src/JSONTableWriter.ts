@@ -21,6 +21,16 @@ export class JSONTableWriter<
     super();
   }
 
+  addWriteEventListeners(callback: (evt: JSONTableWriterEvent) => void) {
+    for (const state of [
+      JSONTableWriterState.HEADER_ROW_WRITTEN,
+      JSONTableWriterState.DATA_ROWS_WRITTEN,
+      JSONTableWriterState.DATA_ROWS_ENDED,
+    ]) {
+      this.addEventListener(state, callback as EventListener);
+    }
+  }
+
   write(chunk: string | Uint8Array) {
     if (typeof chunk === "string") {
       this.writesBuffer += chunk;
@@ -137,5 +147,18 @@ export class JSONTableWriterEvent<
     public writtenDataRows: DataRowType[]
   ) {
     super(eventName);
+  }
+  /**
+   * The return type on this isn't great (flattens HeaderRowType to a
+   * consistent DataRowType[]), but it's useful for just jamming into
+   * an HTML table row, hence the "debug" in the method name.
+  */
+  debugWrittenHeaderAndDataRows() {
+    let rows: DataRowType[] = [];
+    if (this.writtenHeaderRow !== null) {
+      rows.push(this.writtenHeaderRow as unknown as DataRowType);
+    }
+    rows = rows.concat(this.writtenDataRows);
+    return rows;
   }
 }

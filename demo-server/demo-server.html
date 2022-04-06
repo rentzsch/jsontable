@@ -11,23 +11,12 @@
   </head>
   <body>
     <form>
-      Stream <input id="count" type="number" value="10" min="1" /> rows, 1
-      every
+      Stream <input id="count" type="number" value="10" min="1" /> rows, 1 every
       <input id="interval" type="number" value="1000" min="0" /> milliseconds
     </form>
     <button>Stream</button>
     <hr />
-    <table id="output">
-      <thead>
-        <tr>
-          Timestamp
-        </tr>
-        <tr>
-          UUID
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <table id="output" border="1"></table>
     <template id="row">
       <tr>
         <td class="timestamp"></td>

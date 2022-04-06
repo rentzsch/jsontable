@@ -28,7 +28,7 @@ http
     }
   })
   .listen(3000);
-console.log("visit http://localhost:3000");
+console.log("\n*** Visit http://localhost:3000");
 
 function handleReadStream(
   reqID: number,
