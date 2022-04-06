@@ -7,25 +7,24 @@
   "scripts": {
     "clean": "find src -name '*.js' -delete",
     "test": "tsc && ava",
-    "demo": "yarn test && node src/jsontable-demo-server.js",
+    "demo": "yarn test && webpack && node src/jsontable-demo-server.js",
     "prepublishOnly": "yarn clean && yarn test && rm dist/**/*.test.js && rm dist/demo-server"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.3.1",
     "@types/node": "^17.0.21",
     "ava": "^4.1.0",
-    "rollup": "^2.70.1",
-    "rollup-plugin-dts": "^4.2.0",
+    "ts-loader": "^9.2.8",
     "ts-node": "^10.7.0",
     "tslib": "^2.3.1",
     "type-fest": "^2.12.0",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2"
   },
   "engines": {
     "node": ">=16"
   },
   "files": [
-    "src/**/*.js",
-    "jsontable.mjs"
+    "src/**/*.js"
   ]
 }
