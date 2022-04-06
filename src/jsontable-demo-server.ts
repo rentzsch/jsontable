@@ -13,11 +13,11 @@ http
     switch (url.pathname) {
       case "/":
         res.writeHead(200, { "Content-Type": "text/html" });
-        res.end(fs.readFileSync("demo-server/demo-server.html"));
+        res.end(fs.readFileSync("demo-server.html"));
         break;
       case "/client.js":
         res.writeHead(200, { "Content-Type": "text/javascript" });
-        res.end(fs.readFileSync("demo-server/demo-server-client-bundle.js"));
+        res.end(fs.readFileSync("dist/demo-server-client-bundle.js"));
         break;
       case "/read-stream":
         handleReadStream(reqID, url.searchParams, res);

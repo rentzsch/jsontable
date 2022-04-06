@@ -2,12 +2,12 @@
   "name": "@rentzsch/jsontable",
   "version": "0.1.0",
   "description": "Simple, efficient, flexible, streamable tabular textual data format",
-  "main": "dist/jsontable.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "clean": "find src -name '*.js' -delete && rm -f demo-server/demo-server-client-bundle.js",
+    "clean": "rm -rf dist",
     "test": "tsc && ava",
-    "demo": "yarn test && webpack && node src/jsontable-demo-server.js",
+    "demo": "yarn test && webpack && node dist/jsontable-demo-server.js",
     "prepublishOnly": "yarn clean && yarn test"
   },
   "devDependencies": {

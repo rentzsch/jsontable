@@ -16,7 +16,7 @@ module.exports = {
   },
   output: {
     filename: "demo-server-client-bundle.js",
-    path: path.resolve(__dirname, "demo-server"),
+    path: path.resolve(__dirname, "dist"),
   },
   mode: "none",
 };

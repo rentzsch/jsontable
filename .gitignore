@@ -1,6 +1,5 @@
 # Compiled TypeScript-compiled files
-src/**/*.js
-demo-server/demo-server-client-bundle.js
+dist
 
 #######################################################################
 # GitHub-generated defaults follow:
