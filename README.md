@@ -1,6 +1,6 @@
 # JSON Table
 
-**JSON Table** is a simple format extension of [ndjson](http://ndjson.org)/[JSON Lines](https://jsonlines.org) that applies *CSV-mindset* to JSON tabular data.
+**JSON Table** is a simple format extension of [JSON Lines](https://jsonlines.org) that applies *CSV-mindset* to JSON tabular data.
 
 It adds two requirements:
 
